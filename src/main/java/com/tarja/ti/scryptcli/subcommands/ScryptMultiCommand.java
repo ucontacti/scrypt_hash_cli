@@ -17,16 +17,16 @@ import java.util.List;
 
 public class ScryptMultiCommand implements Runnable 
 {
-    @Option(names = {"-pi", "--password_input"}, required = true)
+    @Option(names = {"-pi", "--password_input"}, required = true, description = "Password file input path (passwords should be separated by newline)")
     private String pwd_path;
 
-    @Option(names = {"-s", "--salt"})
+    @Option(names = {"-s", "--salt"}, description = "Optional Salt value, if not entered a Salt will be generated and displayed on execution")
     private String salt;
 
-    @Option(names = {"-si", "--salt_input"})
+    @Option(names = {"-si", "--salt_input"}, description = "Salt file input path (passwords should be separated by newline) and should be length of password entries")
     private String salt_path;
 
-    @Option(names = {"-o", "--output"})
+    @Option(names = {"-o", "--output"}, description = "Optional output file path to scrypted passwords")
     private String output_path;
 
     @Override

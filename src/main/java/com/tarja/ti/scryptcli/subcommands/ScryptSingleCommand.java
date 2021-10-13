@@ -11,10 +11,10 @@ import com.tarja.ti.server.shared.util.passphrase.PBKDF2PasswordUtil;
 
 public class ScryptSingleCommand implements Runnable 
 {
-    @Option(names = {"-pwd", "--password"}, required = true, split = ",")
+    @Option(names = {"-pwd", "--password"}, required = true, split = ",", description = "Password (can be multiple if splited by ',' character")
     private String[] pwds;
 
-    @Option(names = {"-s", "--salt"})
+    @Option(names = {"-s", "--salt"}, description = "Optional Salt value, if not entered a Salt will be generated and displayed on execution")
     private String salt;
 
     @Override
